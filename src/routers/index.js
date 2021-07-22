@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";

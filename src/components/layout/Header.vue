@@ -1,37 +1,33 @@
 <template>
   <div id="app">
     <div class="row-nav-top">
-      <div  class="nav-top" v-show="authUser">
-      <div @click="logout">Logout</div>
+      <div class="nav-top" v-if="authUser">
+        <div @click="logout">Logout</div>
       </div>
-      <div class="nav-top" v-show="!authUser">
-          <div @click="$router.push({ name: 'sign-in' })">Login</div>
+      <div class="nav-top" v-if="!authUser">
+        <div @click="$router.push({ name: 'login' })">Login</div>
         <div>|</div>
         <div @click="$router.push({ name: 'sign-up' })">Sign Up</div>
       </div>
     </div>
     <v-row class="navbar">
-      <v-col cols="4" lg="4" md="2" sm="2" xs="2">
+      <v-col cols="3" lg="4" md="2" sm="2" xs="2">
         <div class="route-home" @click="$router.push({ name: 'home' })">
-          Sneakers
+          DUYANH|TRUONG
         </div>
       </v-col>
-      
-      <v-col lg="4" md="4" sm="4" xs="4" class="category">
+
+      <v-col cols="4" lg="2" md="2" sm="2" xs="2" class="category">
         <v-row>
-          <v-col class="nav-hover"></v-col>
-          <v-col class="nav-hover">Men</v-col>
-          <v-col class="nav-hover">Women</v-col>
-          <v-col class="nav-hover">Sale</v-col>
-          <v-col class="nav-hover">Contact</v-col>
-          <v-col class="nav-hover"></v-col>
+          <v-col class="nav-hover">Tin Tức</v-col>
+          <v-col class="nav-hover">Thương Hiệu</v-col>
         </v-row>
       </v-col>
-      <v-col cols="4" lg="4" md="6" sm="6" xs="6" class="nav-right">
+      <v-col cols="6" lg="4" md="6" sm="6" xs="6" class="nav-right">
         <v-row class="search">
           <v-col cols="8">
-            <v-dialog transition="dialog-top-transition" max-width="600">
-              <template v-slot:activator="{ on, attrs }">
+            <v-dialog max-width="600">
+              <template v-slot:activator="">
                 <v-col cols="12">
                   <v-text-field
                     class="border-input input-edit search-bar"
@@ -41,102 +37,23 @@
                     height="30"
                     color="#171717"
                     placeholder="Search"
-                    hide-details
-                    v-bind="attrs"
-                    v-on="on"
                   >
-                    <template v-slot:prepend-inner>
-                      <img
-                        v-bind="attrs"
-                        v-on="on"
-                        width="22"
-                        height="25"
-                        style="margin-right: 5px"
-                        src="@/assets/svg/ic_searchBar.svg"
-                      />
-                    </template>
                   </v-text-field>
                 </v-col>
               </template>
-              <template v-slot:default="dialog">
-                <v-card>
-                  <v-card-text>
-                    <v-row>
-                    <v-col cols="3">
-                      <div class="route-home" @click="$router.push({ name: 'home' })">
-          Sneakers
-        </div>
-                    </v-col>
-                      <v-col cols="6">
-                      <v-text-field
-                    class="border-input input-edit search-bar"
-                    filled
-                    rounded
-                    dense
-                    height="30"
-                    color="#171717"
-                    placeholder="Search"
-                    hide-details
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    <template v-slot:prepend-inner>
-                      <img
-                        v-bind="attrs"
-                        v-on="on"
-                        width="22"
-                        height="25"
-                        style="margin-right: 5px"
-                        src="@/assets/svg/ic_searchBar.svg"
-                      />
-                    </template>
-                  </v-text-field>
-                  </v-col>
-                  <v-col cols="3" class="col-end">
-                   <v-btn class="btn-close" text @click="dialog.value = false">
-                      <img
-                        width="15"
-                        height="15"
-                        src="@/assets/svg/ic_close.svg"
-                      />
-                   </v-btn>
-                  </v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="3"></v-col>
-                    <v-col cols="6">
-                      <div class="terms-title">Popular Search Terms</div>
-                      <div class="list-terms">
-                            <div>Air Force 1</div>
-                            <div>Jordan</div>
-                            <div>Air Max</div>
-                            <div>Blazer</div>
-                      </div>
-                    </v-col>                  
-                  </v-row>
-                  </v-card-text>
-                </v-card>
-              </template>
             </v-dialog>
           </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-col>
-     
         </v-row>
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
-
 import { mapGetters, mapActions } from "vuex";
 export default {
-  name: "navigation",
+  name: "Header",
   components: {},
   methods: {
-    
     ...mapActions({ logoutUser: "auth/logout" }),
     logout() {
       this.logoutUser().then(() => {
@@ -145,10 +62,6 @@ export default {
     },
   },
   computed: {
-    // auth(){
-    //      const userInfo = localStorage.getItem('userInfo');
-    //      return userInfo;
-    // },
     ...mapGetters({
       authUser: "auth/authUser",
     }),
@@ -165,8 +78,6 @@ export default {
 };
 </script>
 <style lang="scss">
-#app {
-}
 .v-image__image {
   background-position: none !important;
 }
@@ -174,20 +85,20 @@ export default {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-.col-center{
+.col-center {
   display: flex;
   justify-content: center;
 }
-.col-end{
+.col-end {
   display: flex;
   justify-content: flex-end;
 }
-.btn-close{
-  border-radius: 50%!important;
-  background-color: #f9f9f9!important;
-  min-width: 36px!important;
+.btn-close {
+  border-radius: 50% !important;
+  background-color: #f9f9f9 !important;
+  min-width: 36px !important;
 }
-.btn-close:hover{
+.btn-close:hover {
   background-color: #dbdbdb;
 }
 .text-center {
@@ -197,37 +108,37 @@ export default {
 .nav-hover {
   cursor: pointer;
 }
-.row-nav-top{
+.row-nav-top {
   // margin: 0!important;
-  .nav-top{
+  .nav-top {
     height: 2rem;
-  padding-right: 5%!important;
-  display: flex;
-  font-size: 14px;
-  justify-content: flex-end;
-  background-color: #f9f9f9;
-  align-items: center;
-  // padding: 0!important;
-  div{
-    margin: 0.5rem;
-  }
-  div:hover{
-    cursor: pointer;
+    padding-right: 5% !important;
+    display: flex;
+    font-size: 14px;
+    justify-content: flex-end;
+    background-color: #f9f9f9;
+    align-items: center;
+    // padding: 0!important;
+    div {
+      margin: 0.5rem;
+    }
+    div:hover {
+      cursor: pointer;
+    }
   }
 }
-}
-.terms-title{
+.terms-title {
   margin-top: 2rem;
   font-size: 18px;
 }
-.list-terms{
+.list-terms {
   font-size: 20px;
-  color: #171717!important;
-  div{
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+  color: #171717 !important;
+  div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-  div:hover{
+  div:hover {
     cursor: pointer;
     opacity: 0.8;
   }
@@ -247,12 +158,12 @@ export default {
   right: 0;
   margin: 0 !important;
   max-width: 100% !important;
-    border-radius: 0!important;
+  border-radius: 0 !important;
 }
 .v-sheet.v-card {
-  border-radius: 0!important;
+  border-radius: 0 !important;
 }
-.v-card__text{
+.v-card__text {
   margin-top: 8px;
 }
 .route-home {
@@ -264,9 +175,6 @@ export default {
 }
 .search-bar {
   font-size: 20px !important;
-}
-.center {
-  // text-align: center;
 }
 .search {
   justify-content: center;

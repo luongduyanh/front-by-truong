@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { AuthService } from "@/services";
 
 export default {
@@ -46,8 +45,8 @@ export default {
       const email = localStorage.getItem("email");
       if (data) {
         localStorage.setItem("accessToken", data);
-        context.commit("LOGIN", data);
-        await context.dispatch("ACTION_SAVE_AUTH_USER", email);
+        context.commit("LOGIN", data); //thay doi stage
+        await context.dispatch("ACTION_SAVE_AUTH_USER", email); //thuc hien action ben trong
       }
     },
     async ACTION_SAVE_AUTH_USER(context, credentials) {

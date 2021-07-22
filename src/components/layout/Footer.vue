@@ -126,9 +126,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.main {
-  // margin-top: 10%;
-}
 .row-main {
   margin: 0 !important;
   //   height: 65vh;
