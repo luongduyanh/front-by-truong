@@ -10,9 +10,7 @@
         :key="product.ID"
         class="cart"
       >
-        <form @click="$router.push({ name: 'product-detail' })">
-          <Product :product="product" />
-        </form>
+        <Product :product="product" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -41,20 +39,5 @@ export default {
 <style scoped>
 .cart {
   margin: 1rem !important;
-}
-.v-card {
-  height: 400px;
-}
-.v-card__title {
-  font-size: 13px;
-  line-height: 16px;
-}
-.v-card__subtitle {
-  display: flex;
-  justify-content: space-between;
-}
-.old-price {
-  font-size: 12px;
-  text-decoration: line-through;
 }
 </style>
