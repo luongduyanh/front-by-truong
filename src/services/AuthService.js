@@ -3,7 +3,7 @@ import axios from '../utils/axios'
 const AuthService = {
     getAuthUser(credentials) {
         // console.log(credentials)
-        return axios.get(`/profile/${credentials}`)
+        return axios.get(`/users/${credentials}`)
     },
     async loginForm(credentials) {
         return await ApiService.post('auth/login', credentials)
