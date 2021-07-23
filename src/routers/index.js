@@ -103,6 +103,18 @@ const routes = [
       isLogin: false,
     },
   },
+  //tim kiem
+  // es search
+  {
+    path: "/essearch",
+    name: "essearch",
+    component: () => import("../views/searching/SearchPage.vue"),
+    meta: {
+      title: "ES Search",
+      isPublic: true,
+      isLogin: false,
+    },
+  },
 ];
 
 const router = new VueRouter({
