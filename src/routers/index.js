@@ -98,7 +98,7 @@ const routes = [
     name: "detail",
     component: () => import("../views/products/Details.vue"),
     meta: {
-      title: "Product Detail",
+      title: "detail",
       isPublic: true,
       isLogin: false,
     },
@@ -137,6 +137,7 @@ router.beforeEach(async (to, from, next) => {
   // if (requiresAuth && !isAuthenticated) {
   //   router.push({ name: "sign-in" });
   // }
+  window.document.title = to.meta && to.meta.title ? to.meta.title : "Home";
   if (isLogin && isAuthenticated) {
     next("");
   }

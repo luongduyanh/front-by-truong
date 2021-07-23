@@ -1,12 +1,14 @@
 <template>
   <nav>
-    <div class="menu-item"><a href="">THIẾT BỊ ĐEO TAY</a></div>
-    <div class="menu-item"><a href="">NGHE/NHÌN</a></div>
-    <div class="menu-item"><a href="">LINH KIỆN PC</a></div>
-    <div class="menu-item"><a href="">MÁY TÍNH</a></div>
-    <div class="menu-item"><a href="">GAMING GEAR</a></div>
-    <div class="menu-item"><a href="">CAMERA</a></div>
-    <div class="menu-item"><a href="">PHỤ KIỆN</a></div>
+    <div class="menu-item">
+      <router-link to="">THIẾT BỊ ĐEO TAY</router-link>
+    </div>
+    <div class="menu-item"><router-link to="">NGHE/NHÌN</router-link></div>
+    <div class="menu-item"><router-link to="">LINH KIỆN PC</router-link></div>
+    <div class="menu-item"><router-link to="">MÁY TÍNH</router-link></div>
+    <div class="menu-item"><router-link to="">GAMING GEAR</router-link></div>
+    <div class="menu-item"><router-link to="">CAMERA</router-link></div>
+    <div class="menu-item"><router-link to="">PHỤ KIỆN</router-link></div>
   </nav>
 </template>
 
