@@ -11,16 +11,24 @@
       </div>
     </div>
     <v-row class="navbar">
-      <v-col cols="3" lg="4" md="2" sm="2" xs="2">
+      <v-col cols="3" lg="3" md="2" sm="2" xs="2">
         <div class="route-home" @click="$router.push({ name: 'home' })">
           DUYANH|TRUONG
         </div>
       </v-col>
 
-      <v-col cols="4" lg="2" md="2" sm="2" xs="2" class="category">
+      <v-col cols="4" lg="4" md="2" sm="2" xs="2" class="category">
         <v-row>
-          <v-col class="nav-hover">Tin Tức</v-col>
-          <v-col class="nav-hover">Thương Hiệu</v-col>
+          <v-col class="nav-hover">
+            <router-link to="/posts" style="text-decoration: none"
+              >TIN TỨC</router-link
+            >
+          </v-col>
+          <v-col class="nav-hover">
+            <router-link to="/brands" style="text-decoration: none"
+              >THƯƠNG HIỆU</router-link
+            >
+          </v-col>
         </v-row>
       </v-col>
       <v-col cols="6" lg="4" md="6" sm="6" xs="6" class="nav-right">
@@ -116,7 +124,7 @@ export default {
     display: flex;
     font-size: 14px;
     justify-content: flex-end;
-    background-color: #f9f9f9;
+    background-color: #dbdbbd;
     align-items: center;
     // padding: 0!important;
     div {

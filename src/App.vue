@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <Header />
+      <Category />
       <v-main>
         <router-view />
       </v-main>
@@ -14,11 +15,13 @@
 import { mapGetters, mapActions } from "vuex";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Category from "@/components/home/Category";
 export default {
   name: "App",
   components: {
     Header,
     Footer,
+    Category,
   },
   data: () => ({
     //

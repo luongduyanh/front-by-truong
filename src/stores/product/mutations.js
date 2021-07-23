@@ -2,8 +2,8 @@ export function setProducts(state, val) {
   state.products = val;
 }
 
-export function setProductsBySubCategory(state, val) {
-  state.products = val;
+export function setProductsByBrand(state, val) {
+  state.productsByBrand = val;
 }
 
 export function setProduct(state, val) {

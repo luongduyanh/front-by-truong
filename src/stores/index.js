@@ -1,10 +1,10 @@
-
 import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import common from "./common";
 import auth from "./auth";
 import product from "./product";
+import brand from "./brand";
 
 Vue.use(Vuex);
 
@@ -13,6 +13,7 @@ const store = new Vuex.Store({
     common,
     auth,
     product,
+    brand,
   },
   plugins: [
     createPersistedState({

@@ -12,12 +12,12 @@ export function getProducts({ commit }) {
     });
 }
 
-export function getProductsBySubCategory({ commit }, id) {
-  let url = "http://localhost:8000/api/sub-categories/" + id + "products";
+export function getProductsByBrand({ commit }, id) {
+  let url = "http://localhost:8000/api/brands/" + id + "products";
   axios
     .get(url)
     .then((response) => {
-      commit("setProducts", response.data);
+      commit("setProductsbyBrand", response.data);
     })
     .catch((error) => {
       console.log(error);
