@@ -2,6 +2,10 @@ export function setProducts(state, val) {
   state.products = val;
 }
 
+export function setProductsBySubCategory(state, val) {
+  state.products = val;
+}
+
 export function setProduct(state, val) {
   state.product = val;
 }

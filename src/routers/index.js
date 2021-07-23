@@ -1,4 +1,3 @@
-
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
@@ -36,10 +35,20 @@ const routes = [
       isLogin: true,
     },
   },
+  // {
+  //   path: "/product-detail",
+  //   name: "product-detail",
+  //   component: () => import("../components/products/ProductDetail.vue"),
+  //   meta: {
+  //     title: "Product Detail",
+  //     isPublic: true,
+  //     isLogin: false,
+  //   },
+  // },
   {
-    path: "/product-detail",
-    name: "product-detail",
-    component: () => import("../components/products/ProductDetail.vue"),
+    path: "/details/:idProduct",
+    name: "detail",
+    component: () => import("../views/products/Details.vue"),
     meta: {
       title: "Product Detail",
       isPublic: true,

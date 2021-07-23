@@ -1,13 +1,13 @@
 <template>
   <v-card class="mx-auto" max-width="200">
     <div style="height: 200px">
-      <router-link to="product-detail">
+      <router-link :to="'/details/' + product.ID">
         <v-img :src="product.image_cover"></v-img>
       </router-link>
     </div>
 
     <v-card-title>
-      <router-link to="product-detail" style="text-decoration: none">
+      <router-link :to="'/details/' + product.ID" style="text-decoration: none">
         <div color="blue darken-2">{{ product.name }}</div>
       </router-link>
     </v-card-title>

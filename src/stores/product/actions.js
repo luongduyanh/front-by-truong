@@ -12,6 +12,18 @@ export function getProducts({ commit }) {
     });
 }
 
+export function getProductsBySubCategory({ commit }, id) {
+  let url = "http://localhost:8000/api/sub-categories/" + id + "products";
+  axios
+    .get(url)
+    .then((response) => {
+      commit("setProducts", response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
 export function productDetails({ commit }, id) {
   let url = "http://localhost:8000/api/products/" + id;
   axios
