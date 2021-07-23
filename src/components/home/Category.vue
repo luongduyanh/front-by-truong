@@ -3,7 +3,7 @@
     <div class="menu-item">
       <router-link to="">THIẾT BỊ ĐEO TAY</router-link>
     </div>
-    <div class="menu-item"><router-link to="">NGHE/NHÌN</router-link></div>
+    <div class="menu-item"><router-link to="" :id="1">NGHE/NHÌN</router-link></div>
     <div class="menu-item"><router-link to="">LINH KIỆN PC</router-link></div>
     <div class="menu-item"><router-link to="">MÁY TÍNH</router-link></div>
     <div class="menu-item"><router-link to="">GAMING GEAR</router-link></div>
