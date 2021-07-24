@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="row-nav-top">
-      <div class="nav-top">
+      <div class="nav-top" v-if="authUser">
+        <div @click="logout">Logout</div>
+        <div>|</div>
         <router-link class="" to="/cart">
           <img
             src="https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG38.png"
@@ -11,13 +13,19 @@
           <span class="badge badge-danger badge-pill">{{ cart.length }}</span>
         </router-link>
       </div>
-      <div class="nav-top" v-if="authUser">
-        <div @click="logout">Logout</div>
-      </div>
       <div class="nav-top" v-if="!authUser">
         <div @click="$router.push({ name: 'login' })">Login</div>
         <div>|</div>
         <div @click="$router.push({ name: 'sign-up' })">Sign Up</div>
+        <div>|</div>
+        <router-link class="" to="/cart">
+          <img
+            src="https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG38.png"
+            width="30"
+            alt
+          />
+          <span class="badge badge-danger badge-pill">{{ cart.length }}</span>
+        </router-link>
       </div>
     </div>
     <v-row class="navbar">
@@ -61,7 +69,7 @@
                       height="30"
                       color="#171717"
                       placeholder="ESSearch"
-                      v-model="searchName"
+                      v-model="searchText"
                     >
                     </v-text-field>
                   </v-form>
@@ -179,6 +187,7 @@ export default {
   // margin: 0 !important;
   // border-bottom: 1px solid #dbdbdb;
   font-size: 18px;
+
   // margin-top: 0px !important;
 }
 .v-dialog {

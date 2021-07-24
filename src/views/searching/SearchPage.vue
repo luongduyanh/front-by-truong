@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     submit() {
-      axios.get(`products/search/${this.searchText}`).then((response) => {
+      axios.get(`/search/${this.searchText}`).then((response) => {
         this.products = response.data;
       });
     },

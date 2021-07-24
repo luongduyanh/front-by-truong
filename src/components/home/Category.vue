@@ -32,6 +32,7 @@ nav .menu-item {
   border-bottom: 3px solid transparent;
   display: flex;
   transition: 0.4s;
+  
 }
 nav .menu-item.active,
 nav .menu-item:hover {

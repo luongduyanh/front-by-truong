@@ -52,7 +52,7 @@ const routes = [
   {
     path: "/brands/:idBrand/Products",
     name: "ProductsByBrand",
-    component: () => import("../components/products/ProductListByBrand.vue"),
+    component: () => import("../components/products/ProductList.vue"),
     meta: {
       title: "Product By Brand",
       isPublic: true,
