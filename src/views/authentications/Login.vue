@@ -40,6 +40,9 @@
 <script>
 import { mapActions } from "vuex";
 import { ACTION_SET_BEFORE_ROUTER } from "@/stores/common/actions";
+// import Header from "@/components/layout/Header";
+// import Footer from "@/components/layout/Footer";
+// import Category from "@/components/home/Category";
 export default {
   name: "login",
   components: {},

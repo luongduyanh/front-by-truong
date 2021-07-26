@@ -15,6 +15,15 @@ const routes = [
       title: "DuyAnh|Truong",
     },
   },
+  //dashboard
+  {
+    path: "/dashboard",
+    name: "home",
+    component: Home,
+    meta: {
+      title: "DuyAnh|Truong",
+    },
+  },
   //đăng nhập
   {
     path: "/auth/login",
