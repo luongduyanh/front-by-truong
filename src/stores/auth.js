@@ -49,16 +49,7 @@ export default {
         await context.dispatch("ACTION_SAVE_AUTH_USER", email); //thuc hien action ben trong
       }
     },
-    async ACTION_SAVE_AUTH_USER(context, credentials) {
-      if (localStorage.getItem("accessToken")) {
-        const { data } = await AuthService.getAuthUser(credentials);
-        if (data) {
-          localStorage.setItem("userInfo", JSON.stringify(data));
-          context.commit("SAVE_AUTH_USER", JSON.stringify(data));
-        }
-        return data;
-      }
-    },
+
 
     logout(context) {
       // return AuthService.logout().then(() => {

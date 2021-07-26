@@ -90,7 +90,6 @@ export default {
   },
   computed: {
     ...mapGetters("product", ["cart"]),
-    ...mapGetters("account", ["user"]),
   },
   methods: {
     ...mapActions("product", ["removeCart"]),
@@ -104,7 +103,7 @@ export default {
       const vm = this;
       setTimeout(() => {
         vm.removeCart();
-        alert("Purchase successful!");
+        alert("Thanh toán thành công");
         vm.$router.push("/");
       }, 2000);
     },

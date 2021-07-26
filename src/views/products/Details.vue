@@ -9,7 +9,9 @@
       <div class="col-6 text-left text-justify">
         <div class="h1">{{ product.name }}</div>
         <br />
-        <p class="lead text-justify">{{ product.description }}</p>
+        <div class="lead text-justify" style="white-space: pre-line">
+          {{ product.description }}
+        </div>
         <div>
           <p class="h2">{{ product.price_cover }}</p>
         </div>

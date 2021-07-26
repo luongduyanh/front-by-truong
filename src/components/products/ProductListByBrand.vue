@@ -6,11 +6,11 @@
         sm6
         md4
         lg2
-        v-for="productByBrand in productsByBrand"
-        :key="productByBrand.ID"
+        v-for="product in productsByBrand"
+        :key="product.ID"
         class="cart"
       >
-        <Product :productByBrand="productByBrand" />
+        <Product :product="product" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -22,21 +22,15 @@ import Product from "./Product.vue";
 export default {
   name: "ProductListByBrand",
   computed: {
-    ...mapGetters("productByBrand", ["productsByBrand", "productsByBrand"]),
+    ...mapGetters("product", ["productsByBrand"]),
   },
   components: {
     Product,
   },
   methods: {
-    ...mapActions("productByBrand", [
-      "getProducts",
-      "getProductsByBrand",
-      "addCart",
-      "removeCart",
-    ]),
+    ...mapActions("product", ["getProductsByBrand", "addCart", "removeCart"]),
   },
   mounted() {
-    this.getProducts();
     this.getProductsByBrand(this.$route.params.idBrand);
   },
 };

@@ -52,7 +52,7 @@ const routes = [
   {
     path: "/brands/:idBrand/Products",
     name: "ProductsByBrand",
-    component: () => import("../components/products/ProductList.vue"),
+    component: () => import("../components/products/ProductListByBrand.vue"),
     meta: {
       title: "Product By Brand",
       isPublic: true,
@@ -137,7 +137,6 @@ router.beforeEach(async (to, from, next) => {
   // if (requiresAuth && !isAuthenticated) {
   //   router.push({ name: "sign-in" });
   // }
-  window.document.title = to.meta && to.meta.title ? to.meta.title : "Home";
   if (isLogin && isAuthenticated) {
     next("");
   }

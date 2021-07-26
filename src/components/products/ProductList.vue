@@ -22,7 +22,7 @@ import Product from "./Product.vue";
 export default {
   name: "ProductList",
   computed: {
-    ...mapGetters("product", ["products", "productsByBrand"]),
+    ...mapGetters("product", ["products"]),
   },
   components: {
     Product,
@@ -30,14 +30,12 @@ export default {
   methods: {
     ...mapActions("product", [
       "getProducts",
-      "getProductsByBrand",
       "addCart",
       "removeCart",
     ]),
   },
   mounted() {
     this.getProducts();
-    this.getProductsByBrand(this.$route.params.idBrand);
   },
 };
 </script>
